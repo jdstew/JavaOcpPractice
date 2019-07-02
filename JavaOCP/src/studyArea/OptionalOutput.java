@@ -5,6 +5,10 @@ import java.util.*;
 public class OptionalOutput {
 
 	public static void main(String[] args) {
+		
+		OptionalDouble od = OptionalDouble.empty();
+		System.out.println(od.orElseThrow(() -> new IllegalArgumentException("INVALID OPERATOR")));
+
 		List<Integer> l = Arrays.asList(-5, 0, 5);
 		
 		Optional<Integer> o = l.stream().max((j, k) -> Integer.compare(j, k));
